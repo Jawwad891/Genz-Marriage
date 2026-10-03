@@ -30,11 +30,11 @@ export const homeGuideSections = [
     ], links: [['Read about online nikah services', '/online-nikah']]
   },
   {
-    id: 'online-nikah-cities', title: 'Find the right city page for your online nikah enquiry',
+    id: 'online-nikah-countries', title: 'Online nikah for overseas Pakistanis, country by country',
     paragraphs: [
-      'Our online nikah pages for Karachi, Lahore, Islamabad and Rawalpindi make it easier to start with the location connected to your enquiry. You may live in that city, have family there or need to discuss where documentation will be coordinated. Mention which of these applies when you contact us. A city name alone does not establish the appropriate registration office or the acceptance of a remote arrangement, so include the location of both partners and any authority that will need to receive the completed documents.',
-      'If your circumstances involve more than one location, explain the connection between them rather than sending separate enquiries with incomplete details. For example, one partner may be in Karachi while the other is abroad, with documents intended for an overseas application. This is different from two partners who are both locally available and simply prefer initial guidance online. Starting with the right context helps the discussion focus on the practical questions that matter: participation, document review, scheduling, registration and the records you expect to receive.'
-    ], links: [['Online nikah in Karachi', '/online-nikah/karachi'], ['Online nikah in Lahore', '/online-nikah/lahore'], ['Online nikah in Islamabad', '/online-nikah/islamabad'], ['Online nikah in Rawalpindi', '/online-nikah/rawalpindi']]
+      'Most online nikah enquiries come from Pakistanis living abroad whose partner is in Pakistan. The nikah takes place in Pakistan with a wakeel, witnesses and the nikah khawan, while the partner abroad joins by video. The Nikah Nama is then registered with the Union Council and the NADRA marriage certificate is issued. What changes from country to country is the embassy that attests your power of attorney, the time difference for the ceremony and how the marriage certificate is used afterwards.',
+      'Gulf countries such as the UAE, Saudi Arabia, Oman and Qatar usually need the certificate attested by MOFA Pakistan and their own embassy before a family visa. The USA and Canada have specific rules on proxy and remote marriages for immigration, so couples planning sponsorship should read those points before booking. Each country page below explains the key steps for that country.'
+    ], links: [['Online nikah from the UAE', '/online-nikah/uae'], ['Online nikah from Saudi Arabia', '/online-nikah/saudi-arabia'], ['Online nikah from the UK', '/online-nikah/uk'], ['Online nikah from the USA', '/online-nikah/usa'], ['Online nikah from Canada', '/online-nikah/canada']]
   },
   {
     id: 'certificate-guide', title: 'Marriage certificate assistance and existing marriage records',
