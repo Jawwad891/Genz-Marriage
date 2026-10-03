@@ -18,6 +18,8 @@ const nextConfig = {
   poweredByHeader: false,
   async redirects() {
     return [
+      // One host only: send the bare domain to www so Google sees a single site.
+      { source: '/:path*', has: [{ type: 'host', value: 'genzmarriages.com' }], destination: 'https://www.genzmarriages.com/:path*', permanent: true },
       // Duplicate of /online-nikah — consolidated to avoid cannibalisation.
       { source: '/online-nikah/pakistan', destination: '/online-nikah', permanent: true },
       // Thin city variants of online nikah — online nikah is location-independent.
