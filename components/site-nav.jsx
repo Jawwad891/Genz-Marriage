@@ -30,6 +30,7 @@ export default function SiteNav() {
           <Link className="certificate-link" href="/marriage-certificate" onClick={close}>Marriage Certificate</Link>
         </div>
       </div>
+      <Link href="/blog" onClick={close}>Blog</Link>
       <Link href="/about-us" onClick={close}>About Us</Link>
       <Link href="/#contact" onClick={close}>Contact Us</Link>
       <a className="nav-whatsapp" href={whatsappLink()} target="_blank" rel="noopener"><MessageCircle size={16} /> Talk to Us on WhatsApp</a>

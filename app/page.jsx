@@ -12,6 +12,7 @@ import { CertificateHero, CertificateDetails, certificateFaqs } from '../compone
 import { JsonLd, faqSchema, breadcrumbSchema, serviceSchema } from '../components/json-ld'
 import { onlineNikahCountries } from '../lib/online-nikah-countries'
 import { whatsappLink } from '../lib/site'
+import { blogPosts } from '../lib/blog-posts'
 import { ArrowUpRight, ChevronDown, Check, MessageCircle, Scale, ClipboardCheck, Sparkles } from 'lucide-react'
 
 const services = [
@@ -103,6 +104,8 @@ export default function Page({ serviceTitle, city, country }) {
       <section className="locations-section"><div className="location-inner"><Reveal><SectionIntro eyebrow="Where we work" title="Court Marriage Across Pakistan" text="Local guidance for each city where we arrange court marriage." /></Reveal><div className="locations-grid">{courtCities.map((name, i) => <Link className="location-card" key={name} href={`/court-marriage/${name.toLowerCase()}`}><span>0{i + 1}</span>{name}<ArrowUpRight size={15} /></Link>)}</div><p className="location-note">Enquiries from other cities are welcome — message us to check availability.</p></div></section>
 
       <section className="chapter-section section-pad"><div className="chapter-image"><Img src="/images/couple-portrait.webp" width={1200} height={655} alt="Pakistani couple beginning married life" /><div className="chapter-card"><p className="eyebrow">A thoughtful beginning</p><h2>Beginning a<br /><em>New Chapter</em></h2><p>Clear guidance. Respectful service. Modern experience.</p></div></div></section>
+
+      {kind === 'home' && <section className="section-pad blog-more" ><SectionIntro eyebrow="Guides" title="Marriage Guides & Resources" text="Practical answers about the Nikah Nama, registration and nikah from abroad." /><div className="blog-grid">{blogPosts.slice(0, 3).map((post) => <article className="blog-card" key={post.slug}><h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3><p>{post.excerpt}</p></article>)}</div><p><Link className="text-link" href="/blog">All guides <span>↗</span></Link></p></section>}
 
       <section id="faqs" className="section-pad faq-section"><div className="faq-grid"><Reveal><SectionIntro eyebrow="Good to know" title="Questions, answered with care." text="The questions we hear most often. Message us for anything specific to your case." /></Reveal><Reveal className="faq-list">{faqs.map(([question, answer], i) => <details className="faq-item" key={question} open={i === 0}><summary><span>{question}</span><ChevronDown size={18} /></summary><p>{answer}</p></details>)}</Reveal></div></section>
 
