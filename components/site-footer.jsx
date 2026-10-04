@@ -2,13 +2,14 @@ import Link from 'next/link'
 import { MessageCircle } from 'lucide-react'
 import { whatsappLink, BUSINESS } from '../lib/site'
 import { onlineNikahCountries } from '../lib/online-nikah-countries'
+import Logo from './logo'
 
 const courtCities = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi']
 
 export default function SiteFooter() {
   return <footer className="site-footer">
     <div className="footer-main">
-      <Link href="/" className="logo logo-light" aria-label="GenZ Marriage home"><span className="logo-mark">G</span><span>GenZ <i>Marriage</i></span></Link>
+      <Logo light />
       <p>Court marriage, online nikah and marriage certificate support in Pakistan.</p>
       {(BUSINESS.streetAddress || BUSINESS.phoneDisplay) && <address className="footer-address">{BUSINESS.streetAddress && <span>{BUSINESS.streetAddress}, {BUSINESS.addressLocality}</span>}{BUSINESS.phoneDisplay && <a href={`tel:${BUSINESS.phoneDisplay.replace(/\s/g, '')}`}>{BUSINESS.phoneDisplay}</a>}</address>}
       <a className="footer-whatsapp" href={whatsappLink()} target="_blank" rel="noopener"><MessageCircle size={16} /> Talk to us on WhatsApp</a>
@@ -18,6 +19,6 @@ export default function SiteFooter() {
       <div><p className="footer-heading">Online Nikah</p><Link href="/online-nikah">Online Nikah</Link>{Object.entries(onlineNikahCountries).map(([slug, item]) => <Link key={slug} href={`/online-nikah/${slug}`}>Online Nikah from {item.name}</Link>)}</div>
       <div><p className="footer-heading">Company</p><Link href="/marriage-certificate">Marriage Certificate</Link><Link href="/blog">Blog &amp; Guides</Link><Link href="/about-us">About Us</Link><Link href="/#contact">Contact</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-and-conditions">Terms &amp; Conditions</Link></div>
     </nav>
-    <div className="footer-bottom"><p>© {new Date().getFullYear()} GenZ Marriage. All rights reserved. Information on this website is general guidance, not legal advice for your specific case.</p></div>
+    <div className="footer-bottom"><p>© {new Date().getFullYear()} GenZ Marriages. All rights reserved. Information on this website is general guidance, not legal advice for your specific case.</p></div>
   </footer>
 }

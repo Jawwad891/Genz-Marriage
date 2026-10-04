@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { ChevronDown, ChevronRight, Menu, X, MessageCircle } from 'lucide-react'
 import { onlineNikahCountries } from '../lib/online-nikah-countries'
 import { whatsappLink } from '../lib/site'
+import Logo from './logo'
 
 const cities = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi']
 
@@ -14,7 +15,7 @@ export default function SiteNav() {
   const [cityMenu, setCityMenu] = useState(null)
   const close = () => { setOpen(false); setServicesOpen(false); setCityMenu(null) }
   return <header className="site-header"><div className="nav-wrap">
-    <Link href="/" className="logo" aria-label="GenZ Marriage home" onClick={close}><span className="logo-mark">G</span><span>GenZ <i>Marriage</i></span></Link>
+    <Logo onClick={close} />
     <nav className={`nav-links ${open ? 'nav-open' : ''}`} aria-label="Main navigation" onKeyDown={(event) => { if (event.key === 'Escape') close() }}>
       <Link href="/" onClick={close}>Home</Link>
       <div className={`nav-dropdown ${servicesOpen ? 'dropdown-open' : ''}`}>

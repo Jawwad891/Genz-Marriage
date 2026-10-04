@@ -17,7 +17,7 @@ export default function BlogIndex() {
   const listSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'GenZ Marriage Guides',
+    name: 'GenZ Marriages Guides',
     url: absoluteUrl('/blog'),
     blogPost: blogPosts.map((post) => ({ '@type': 'BlogPosting', headline: post.title, url: absoluteUrl(`/blog/${post.slug}`), datePublished: post.date })),
   }

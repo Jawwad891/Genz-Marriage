@@ -12,7 +12,7 @@ export const certificateFaqs = [
 export function CertificateHero() {
   return <div className="karachi-hero-description">
     <h2>NADRA Marriage Certificate, Nikah Registration &amp; Attestation</h2>
-    <p className="hero-text">Need a NADRA marriage certificate for a visa, passport, family registration or bank? GenZ Marriage helps you register your Nikah Nama with the Union Council, obtain the computerised marriage certificate and arrange MOFA attestation and translation.</p>
+    <p className="hero-text">Need a NADRA marriage certificate for a visa, passport, family registration or bank? GenZ Marriages helps you register your Nikah Nama with the Union Council, obtain the computerised marriage certificate and arrange MOFA attestation and translation.</p>
     <h3>For New and Existing Marriages</h3>
     <p className="hero-text">Whether you married through <Link href="/court-marriage">court marriage</Link>, an <Link href="/online-nikah">online nikah</Link> or a family nikah years ago, we explain what your Union Council needs and handle the follow-up.</p>
   </div>

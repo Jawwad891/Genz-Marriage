@@ -61,7 +61,7 @@ export default async function BlogPost({ params }) {
           {section.list && <ul>{section.list.map((item) => <li key={item}><RichText text={item} /></li>)}</ul>}
         </section>)}
         {post.faqs?.length > 0 && <section className="blog-faqs"><h2>Frequently Asked Questions</h2>{post.faqs.map(([q, a]) => <div key={q}><h3>{q}</h3><p>{plainText(a)}</p></div>)}</section>}
-        <aside className="karachi-quote-strip"><div><p className="eyebrow">Need help?</p><h3>Talk to GenZ Marriage</h3><p>Share your situation on WhatsApp for a checklist and an itemised quote.</p></div><a className="button button-primary" href={whatsappLink(`Assalam o Alaikum, I read "${post.title}" and need guidance.`)} target="_blank" rel="noopener">Chat on WhatsApp <span aria-hidden="true">↗</span></a></aside>
+        <aside className="karachi-quote-strip"><div><p className="eyebrow">Need help?</p><h3>Talk to GenZ Marriages</h3><p>Share your situation on WhatsApp for a checklist and an itemised quote.</p></div><a className="button button-primary" href={whatsappLink(`Assalam o Alaikum, I read "${post.title}" and need guidance.`)} target="_blank" rel="noopener">Chat on WhatsApp <span aria-hidden="true">↗</span></a></aside>
         <nav className="guide-links" aria-label="Related services">{post.related.map(([label, href]) => <Link key={href} href={href}>{label}<span aria-hidden="true">↗</span></Link>)}</nav>
         <p className="blog-disclaimer">This guide is general information, not legal advice for your specific case. Procedures can differ between Union Councils and change over time.</p>
       </article>

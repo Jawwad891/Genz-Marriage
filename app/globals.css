@@ -201,3 +201,10 @@ a.location-card:hover { background: rgba(255,255,255,.06); }
 .blog-disclaimer { font-size: 12px !important; color: var(--muted) !important; margin-top: 30px; }
 @media (max-width: 850px) { .blog-grid { grid-template-columns: 1fr; } .karachi-quote-strip { flex-direction: column; align-items: flex-start; } }
 .blog-article .eyebrow { font-size: 10px; line-height: 1.4; color: var(--gold); }
+
+/* ── Brand logo ───────────────────────────────────────── */
+.logo { gap: 11px; }
+.logo-svg { display: block; flex-shrink: 0; width: 36px; height: 36px; }
+.logo-light .logo-svg { box-shadow: 0 0 0 1px rgba(179,154,99,.55); border-radius: 50%; }
+.logo-text { line-height: 1; }
+@media (max-width: 850px) { .logo-svg { width: 32px; height: 32px; } }

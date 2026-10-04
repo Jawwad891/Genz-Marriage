@@ -22,7 +22,7 @@ const services = [
 ]
 
 const homeFaqs = [
-  ['What services does GenZ Marriage provide?', 'Court marriage in Karachi, Lahore, Islamabad and Rawalpindi, online nikah for overseas Pakistanis, and NADRA marriage certificate, Nikah Nama registration, MOFA attestation and translation support.'],
+  ['What services does GenZ Marriages provide?', 'Court marriage in Karachi, Lahore, Islamabad and Rawalpindi, online nikah for overseas Pakistanis, and NADRA marriage certificate, Nikah Nama registration, MOFA attestation and translation support.'],
   ['What documents are required for court marriage?', 'Original CNICs of the bride and groom, CNIC copies of two witnesses, passport-size photographs, and a divorce or death certificate if either partner was married before. We confirm the final list for your case.'],
   ['Can overseas Pakistanis do nikah online?', 'Yes. The nikah takes place in Pakistan with a wakeel you appoint and witnesses, while you join by video. The Nikah Nama is registered with the Union Council and the NADRA certificate issued.'],
   ['How long does court marriage take?', 'With complete documents the affidavits and nikah are usually completed on the same day. Union Council registration and the NADRA certificate follow afterwards.'],
@@ -64,12 +64,12 @@ export default function Page({ serviceTitle, city, country }) {
   const isOnline = kind === 'online'
   const path = crumbs.at(-1)[1]
   const heroImage = isOnline ? { src: '/images/nikah-signing-emerald.webp', width: 768, height: 1376, alt: countryInfo ? `Couple signing their Nikah Nama during an online nikah arranged from ${countryInfo.name}` : 'Couple signing their Nikah Nama during an online nikah' } : { src: '/images/hero-muslim-couple.webp', width: 896, height: 1200, alt: isCourtCity ? `Couple signing their Nikah Nama at a court marriage in ${city}` : 'Muslim couple signing their Nikah Nama at a court marriage in Pakistan' }
-  const eyebrow = isCourtCity ? <>COURT MARRIAGE <span>•</span> {city.toUpperCase()}</> : isOnline ? <>ONLINE NIKAH <span>•</span> {countryInfo ? countryInfo.name.toUpperCase() : 'OVERSEAS PAKISTANIS'}</> : kind === 'court' ? <>COURT MARRIAGE <span>•</span> PAKISTAN</> : kind === 'certificate' ? <>MARRIAGE CERTIFICATE <span>•</span> PAKISTAN</> : <>GENZ MARRIAGE <span>•</span> PAKISTAN</>
+  const eyebrow = isCourtCity ? <>COURT MARRIAGE <span>•</span> {city.toUpperCase()}</> : isOnline ? <>ONLINE NIKAH <span>•</span> {countryInfo ? countryInfo.name.toUpperCase() : 'OVERSEAS PAKISTANIS'}</> : kind === 'court' ? <>COURT MARRIAGE <span>•</span> PAKISTAN</> : kind === 'certificate' ? <>MARRIAGE CERTIFICATE <span>•</span> PAKISTAN</> : <>GENZ MARRIAGES <span>•</span> PAKISTAN</>
   const h1 = kind === 'home'
     ? <h1 className="home-hero-title">Court Marriage in Pakistan <em>&mdash; Online Nikah &amp; NADRA Marriage Certificate</em></h1>
     : <h1>{serviceTitle}<br /><em>{isOnline ? (countryInfo ? `from ${countryInfo.name} to Pakistan` : 'for Overseas Pakistanis') : city ? `in ${city}` : kind === 'court' ? 'in Pakistan' : '& NADRA Registration'}</em></h1>
   const hero = kind === 'home'
-    ? <div className="home-hero-description"><h2 className="hero-subheading">Court Marriage, Online Nikah &amp; Marriage Documentation for Clients in Pakistan and Overseas</h2><p className="hero-text">GenZ Marriage arranges court marriage in Karachi, Lahore, Islamabad and Rawalpindi, online nikah for overseas Pakistanis in the UAE, Saudi Arabia, UK, USA, Canada, Australia, Oman and Qatar, and NADRA marriage certificates with MOFA attestation. Get a clear document checklist, the procedure for your city and an itemised fee quote before you book — privately and without jargon.</p></div>
+    ? <div className="home-hero-description"><h2 className="hero-subheading">Court Marriage, Online Nikah &amp; Marriage Documentation for Clients in Pakistan and Overseas</h2><p className="hero-text">GenZ Marriages arranges court marriage in Karachi, Lahore, Islamabad and Rawalpindi, online nikah for overseas Pakistanis in the UAE, Saudi Arabia, UK, USA, Canada, Australia, Oman and Qatar, and NADRA marriage certificates with MOFA attestation. Get a clear document checklist, the procedure for your city and an itemised fee quote before you book — privately and without jargon.</p></div>
     : kind === 'court' ? <CourtMarriageHero />
     : kind === 'court-karachi' ? <KarachiCourtHero />
     : kind === 'court-city' ? <CourtCityHero city={city} />
@@ -81,7 +81,7 @@ export default function Page({ serviceTitle, city, country }) {
   return <div className="site-shell">
     <JsonLd data={faqSchema(faqs)} />
     {crumbs.length > 1 && <JsonLd data={breadcrumbSchema(crumbs)} />}
-    {serviceTitle && <JsonLd data={serviceSchema({ name: crumbs.at(-1)[0], description: `${crumbs.at(-1)[0]} by GenZ Marriage: procedure, documents, registration and fees.`, path, area: city ? { type: 'City', name: city } : countryInfo ? { type: 'Country', name: countryInfo.name } : null })} />}
+    {serviceTitle && <JsonLd data={serviceSchema({ name: crumbs.at(-1)[0], description: `${crumbs.at(-1)[0]} by GenZ Marriages: procedure, documents, registration and fees.`, path, area: city ? { type: 'City', name: city } : countryInfo ? { type: 'Country', name: countryInfo.name } : null })} />}
     <SiteNav />
     <main>
       {crumbs.length > 1 && <nav className="breadcrumbs" aria-label="Breadcrumb"><ol>{crumbs.map(([name, href], i) => <li key={href}>{i === crumbs.length - 1 ? <span aria-current="page">{name}</span> : <Link href={href}>{name}</Link>}</li>)}</ol></nav>}
@@ -97,7 +97,7 @@ export default function Page({ serviceTitle, city, country }) {
       {kind === 'certificate' && <CertificateDetails />}
       {kind === 'home' && <HomeGuide />}
 
-      <section id="about" className="section-pad about-section"><div className="about-grid"><Reveal className="about-image"><Img src="/images/ceremony.webp" width={1200} height={655} alt="Nikah ceremony setting prepared for a small family wedding" /><div className="image-caption">A considered approach to an important moment.</div></Reveal><Reveal className="about-copy"><SectionIntro eyebrow="Our approach" title="Modern Services for a New Generation" text="GenZ Marriage makes court marriage, online nikah and marriage documentation easier to understand and better organised, with practical guidance for couples and families in Pakistan and abroad." /><div className="about-notes"><div><span>01</span><p>Respectful, private conversations</p></div><div><span>02</span><p>Clear next steps, not complicated jargon</p></div></div></Reveal></div></section>
+      <section id="about" className="section-pad about-section"><div className="about-grid"><Reveal className="about-image"><Img src="/images/ceremony.webp" width={1200} height={655} alt="Nikah ceremony setting prepared for a small family wedding" /><div className="image-caption">A considered approach to an important moment.</div></Reveal><Reveal className="about-copy"><SectionIntro eyebrow="Our approach" title="Modern Services for a New Generation" text="GenZ Marriages makes court marriage, online nikah and marriage documentation easier to understand and better organised, with practical guidance for couples and families in Pakistan and abroad." /><div className="about-notes"><div><span>01</span><p>Respectful, private conversations</p></div><div><span>02</span><p>Clear next steps, not complicated jargon</p></div></div></Reveal></div></section>
 
       <section id="how-it-works" className="section-pad process-section"><Reveal><SectionIntro eyebrow="The process" title="How It Works" text="A calmer way to move from questions to a clear next step." centered /></Reveal><div className="process-grid">{[['01', 'Tell Us What You Need', 'Message us on WhatsApp or the form with your city and service.'], ['02', 'Get a Checklist & Quote', 'We send the documents to prepare and an itemised fee.'], ['03', 'Nikah & Registration', 'Affidavits, nikah, Nikah Nama and Union Council registration.'], ['04', 'Receive Your Certificate', 'NADRA marriage certificate, with attestation if you need it.']].map(([num, title, text]) => <Reveal key={num} className="process-step"><div className="step-number">{num}</div><div><h3>{title}</h3><p>{text}</p></div></Reveal>)}</div></section>
 

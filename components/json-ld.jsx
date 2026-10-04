@@ -14,7 +14,7 @@ export function organizationSchema() {
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
-    logo: absoluteUrl('/icon.svg'),
+    logo: { '@type': 'ImageObject', url: absoluteUrl('/logo.png'), width: 512, height: 512 },
     image: absoluteUrl('/images/hero-muslim-couple.webp'),
     description: 'Court marriage, online nikah and marriage certificate support for couples in Pakistan and overseas Pakistanis.',
     telephone: BUSINESS.phoneDisplay || `+${WHATSAPP_NUMBER}`,

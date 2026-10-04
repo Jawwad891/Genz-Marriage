@@ -3,7 +3,7 @@ import './globals.css'
 import { SITE_URL, SITE_NAME } from '../lib/site'
 import { JsonLd, organizationSchema, websiteSchema } from '../components/json-ld'
 
-const title = 'Court Marriage in Pakistan & Online Nikah | GenZ Marriage'
+const title = 'Court Marriage in Pakistan & Online Nikah | GenZ Marriages'
 const description = 'Court marriage in Karachi, Lahore, Islamabad and Rawalpindi, online nikah for overseas Pakistanis and NADRA marriage certificate support. Clear procedure, documents and fees.'
 
 export const metadata = {

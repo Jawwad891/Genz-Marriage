@@ -14,7 +14,7 @@ export default function ContactForm({ defaultLocation = '', defaultService = '',
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     const text = [
-      'Assalam o Alaikum, I would like guidance from GenZ Marriage.',
+      'Assalam o Alaikum, I would like guidance from GenZ Marriages.',
       `Name: ${data.get('name')}`,
       `Phone: ${data.get('phone')}`,
       `${locationLabel}: ${data.get('location') || '-'}`,

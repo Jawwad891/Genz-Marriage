@@ -2,7 +2,7 @@ import SiteNav from '../../components/site-nav'
 import SiteFooter from '../../components/site-footer'
 import { pageMetadata } from '../../lib/seo'
 
-export const metadata = pageMetadata({ title: 'Terms & Conditions', description: 'Terms for using the GenZ Marriage website and our court marriage, online nikah and marriage certificate services.', path: '/terms-and-conditions' })
+export const metadata = pageMetadata({ title: 'Terms & Conditions', description: 'Terms for using the GenZ Marriages website and our court marriage, online nikah and marriage certificate services.', path: '/terms-and-conditions' })
 
 export default function Terms() {
   return <div className="site-shell"><SiteNav /><main className="legal-page">

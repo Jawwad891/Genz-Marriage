@@ -21,7 +21,7 @@ export const courtMarriageFaqs = [
 export function CourtMarriageHero() {
   return <div className="karachi-hero-description">
     <h2>Court Marriage Procedure, Documents &amp; Fees in Pakistan</h2>
-    <p className="hero-text">GenZ Marriage arranges court marriage in Karachi, Lahore, Islamabad and Rawalpindi: free-will affidavits, nikah with witnesses, Nikah Nama, Union Council registration and the NADRA marriage certificate. Private, organised and explained in plain language before you book.</p>
+    <p className="hero-text">GenZ Marriages arranges court marriage in Karachi, Lahore, Islamabad and Rawalpindi: free-will affidavits, nikah with witnesses, Nikah Nama, Union Council registration and the NADRA marriage certificate. Private, organised and explained in plain language before you book.</p>
     <h3>Same-Day Nikah When Documents Are Ready</h3>
     <p className="hero-text">Send your details on WhatsApp, receive a checklist and an itemised quote, and choose a date. If either of you lives abroad, we can also arrange an <Link href="/online-nikah">online nikah</Link>.</p>
   </div>

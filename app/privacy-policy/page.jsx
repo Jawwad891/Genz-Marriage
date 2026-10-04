@@ -2,7 +2,7 @@ import SiteNav from '../../components/site-nav'
 import SiteFooter from '../../components/site-footer'
 import { pageMetadata } from '../../lib/seo'
 
-export const metadata = pageMetadata({ title: 'Privacy Policy', description: 'How GenZ Marriage collects, uses and protects the personal information you share about court marriage, online nikah and marriage certificate enquiries.', path: '/privacy-policy' })
+export const metadata = pageMetadata({ title: 'Privacy Policy', description: 'How GenZ Marriages collects, uses and protects the personal information you share about court marriage, online nikah and marriage certificate enquiries.', path: '/privacy-policy' })
 
 export default function PrivacyPolicy() {
   return <div className="site-shell"><SiteNav /><main className="legal-page">

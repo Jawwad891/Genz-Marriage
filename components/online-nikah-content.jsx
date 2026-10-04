@@ -20,7 +20,7 @@ export function OnlineNikahHero({ country }) {
   const info = country ? onlineNikahCountries[country] : null
   return <div className="karachi-hero-description">
     <h2>{info ? `Online Nikah for Pakistanis in ${info.region}` : 'Online Nikah Services for Overseas Pakistanis'}</h2>
-    <p className="hero-text">{info ? info.intro : 'Living abroad while your partner is in Pakistan? GenZ Marriage arranges your nikah in Pakistan with a wakeel, video participation, witnesses, Union Council registration and the NADRA marriage certificate. We support clients in the UAE, Saudi Arabia, UK, USA, Canada, Australia, Oman and Qatar.'}</p>
+    <p className="hero-text">{info ? info.intro : 'Living abroad while your partner is in Pakistan? GenZ Marriages arranges your nikah in Pakistan with a wakeel, video participation, witnesses, Union Council registration and the NADRA marriage certificate. We support clients in the UAE, Saudi Arabia, UK, USA, Canada, Australia, Oman and Qatar.'}</p>
     <h3>Wakeel Nikah, NADRA Certificate &amp; Attestation</h3>
     <p className="hero-text">We prepare the Nikah Nama, coordinate the wakeel and witnesses, register the nikah and help with the <Link href="/marriage-certificate">NADRA marriage certificate</Link>, MOFA attestation and translation. You get a clear, itemised quote before anything is booked.</p>
   </div>
