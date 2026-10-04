@@ -4,8 +4,14 @@ import { blogPosts } from '../lib/blog-posts'
 
 const courtCities = ['karachi', 'lahore', 'islamabad', 'rawalpindi']
 
+// Always build the sitemap on request so it never serves a stale cached copy.
+export const dynamic = 'force-dynamic'
+
+// Date the service pages last changed meaningfully. Update when you edit page content.
+const PAGES_UPDATED = '2026-10-04'
+
 export default function sitemap() {
-  const lastModified = new Date()
+  const lastModified = new Date(PAGES_UPDATED)
   const url = (path, priority, changeFrequency = 'monthly') => ({ url: `${SITE_URL}${path}`, lastModified, changeFrequency, priority })
   return [
     url('/', 1, 'weekly'),
