@@ -7,7 +7,7 @@ import { pageMetadata } from '../../lib/seo'
 import { ArrowUpRight, Check, Globe2, FileText, HeartHandshake } from 'lucide-react'
 
 export const metadata = pageMetadata({
-  title: 'About GenZ Marriages – Court Marriage & Online Nikah Support',
+  title: 'About Us – Court Marriage & Online Nikah Support',
   description: 'About GenZ Marriages: court marriage in Karachi, Lahore, Islamabad and Rawalpindi, online nikah for overseas Pakistanis and NADRA marriage certificate support.',
   path: '/about-us',
 })
