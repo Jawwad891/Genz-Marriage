@@ -1,4 +1,4 @@
-import { SITE_URL, SITE_NAME, BUSINESS, WHATSAPP_NUMBER, MAP_LINK, absoluteUrl } from '../lib/site'
+import { SITE_URL, SITE_NAME, BUSINESS, WHATSAPP_NUMBER, MAP_LINK, LAWYER, absoluteUrl } from '../lib/site'
 
 export function JsonLd({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
@@ -25,6 +25,7 @@ export function organizationSchema() {
   if (BUSINESS.email) org.email = BUSINESS.email
   if (BUSINESS.latitude && BUSINESS.longitude) org.geo = { '@type': 'GeoCoordinates', latitude: BUSINESS.latitude, longitude: BUSINESS.longitude }
   if (MAP_LINK) org.hasMap = MAP_LINK
+  if (LAWYER?.name) org.employee = { '@type': 'Person', name: LAWYER.name, jobTitle: LAWYER.title, worksFor: { '@id': `${SITE_URL}/#organization` } }
   return org
 }
 

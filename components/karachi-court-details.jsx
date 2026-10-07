@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { courtMarriageDocuments } from '../lib/court-documents'
+import { LAWYER } from '../lib/site'
 
 const preparation = [
   ['Identity details', 'For court marriage in Karachi, start by reviewing the current identity documents each partner holds. Check that names and other personal details are consistent before paperwork is prepared, and ask which originals and copies to bring.'],
@@ -68,8 +69,8 @@ export default function KarachiCourtDetails() {
       <a className="text-link" href="#contact">Discuss your checklist and appointment <span aria-hidden="true">↗</span></a>
     </section>
     <section className="lawyer-experience" aria-labelledby="lawyer-title">
-      <div className="lawyer-years"><strong>30</strong><span>Years of legal experience</span></div>
-      <div><p className="eyebrow">Experienced legal support</p><h2 id="lawyer-title">Court Marriage Handled by a Lawyer with 30 Years of Experience</h2><p>Your court marriage in Karachi is handled under the supervision of our senior lawyer, who brings 30 years of legal experience to every case. From checking your documents and preparing the free will affidavit to the nikah and Union Council registration, an experienced lawyer makes sure each step is done correctly the first time.</p></div>
+      <div className="lawyer-years"><strong>{LAWYER.years}</strong><span>Years of legal experience</span></div>
+      <div><p className="eyebrow">Experienced legal support</p><h2 id="lawyer-title">Court Marriage Handled by {LAWYER.name}, {LAWYER.title}</h2><p className="lawyer-name">{LAWYER.name} {LAWYER.title} <span>•</span> {LAWYER.years} years of legal experience</p><p>Your court marriage in Karachi is handled under the supervision of {LAWYER.name} {LAWYER.title}, our senior lawyer, who brings {LAWYER.years} years of legal experience to every case. From checking your documents and preparing the free will affidavit to the nikah and Union Council registration, an experienced lawyer makes sure each step is done correctly the first time.</p></div>
     </section>
     <section className="karachi-advantages" aria-labelledby="advantages-title">
       <h2 id="advantages-title">Advantages of Court Marriage in Karachi</h2>
