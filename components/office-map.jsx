@@ -18,7 +18,7 @@ export default function OfficeMap() {
           src={MAP_EMBED_URL}
           title={`${SITE_NAME} office location on Google Maps`}
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
       </div>
