@@ -27,7 +27,7 @@ export function generateStaticParams() {
 }
 
 const cityMeta = {
-  Karachi: 'Court marriage in Karachi with free-will affidavits, nikah, Union Council registration and NADRA certificate. Documents, procedure and fees explained.',
+  Karachi: 'Court marriage in Karachi for Rs. 22,000 to 35,000: free-will affidavits, nikah, Union Council registration & NADRA certificate. Documents & procedure explained.',
   Lahore: 'Court marriage in Lahore: documents, nikah with witnesses, Nikah Nama, Union Council registration and NADRA certificate. Get a clear fee quote.',
   Islamabad: 'Court marriage in Islamabad: age rules under the ICT Act 2025, documents, nikah, registration and NADRA marriage certificate. Get a quote.',
   Rawalpindi: 'Court marriage in Rawalpindi: documents, nikah with witnesses, Union Council registration and NADRA certificate. Procedure and fees explained.',
