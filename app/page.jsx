@@ -2,7 +2,6 @@ import Link from 'next/link'
 import SiteNav from '../components/site-nav'
 import SiteFooter from '../components/site-footer'
 import ContactForm from '../components/contact-form'
-import OfficeMap from '../components/office-map'
 import HomeGuide from '../components/home-guide'
 import KarachiCourtHero from '../components/karachi-court-hero'
 import KarachiCourtDetails from '../components/karachi-court-details'
@@ -110,7 +109,7 @@ export default function Page({ serviceTitle, city, country }) {
 
       <section id="faqs" className="section-pad faq-section"><div className="faq-grid"><Reveal><SectionIntro eyebrow="Good to know" title="Questions, answered with care." text="The questions we hear most often. Message us for anything specific to your case." /></Reveal><Reveal className="faq-list">{faqs.map(([question, answer], i) => <details className="faq-item" key={question} open={i === 0}><summary><span>{question}</span><ChevronDown size={18} /></summary><p>{answer}</p></details>)}</Reveal></div></section>
 
-      <section id="contact" className="contact-section section-pad"><div className="contact-grid"><Reveal><SectionIntro eyebrow="Start a conversation" title="Let&apos;s Talk About Your Requirements" text="Tell us a little about what you need. We&apos;ll reply with a checklist and a clear quote." /><div className="whatsapp-prompt"><span>Prefer WhatsApp?</span><a href={whatsappLink()} target="_blank" rel="noopener"><MessageCircle size={17} /> Chat with us directly <ArrowUpRight size={15} /></a></div></Reveal><Reveal><ContactForm defaultLocation={countryInfo?.name || city || ''} defaultService={defaultService} locationLabel={countryInfo ? 'Country / City' : 'City'} /></Reveal></div><OfficeMap /></section>
+      <section id="contact" className="contact-section section-pad"><div className="contact-grid"><Reveal><SectionIntro eyebrow="Start a conversation" title="Let&apos;s Talk About Your Requirements" text="Tell us a little about what you need. We&apos;ll reply with a checklist and a clear quote." /><div className="whatsapp-prompt"><span>Prefer WhatsApp?</span><a href={whatsappLink()} target="_blank" rel="noopener"><MessageCircle size={17} /> Chat with us directly <ArrowUpRight size={15} /></a></div></Reveal><Reveal><ContactForm defaultLocation={countryInfo?.name || city || ''} defaultService={defaultService} locationLabel={countryInfo ? 'Country / City' : 'City'} /></Reveal></div></section>
     </main>
     <SiteFooter />
   </div>

@@ -33,7 +33,7 @@ export default function SiteNav() {
       </div>
       <Link href="/blog" onClick={close}>Blog</Link>
       <Link href="/about-us" onClick={close}>About Us</Link>
-      <Link href="/#contact" onClick={close}>Contact Us</Link>
+      <Link href="/contact-us" onClick={close}>Contact Us</Link>
       <a className="nav-whatsapp" href={whatsappLink()} target="_blank" rel="noopener"><MessageCircle size={16} /> Talk to Us on WhatsApp</a>
     </nav>
     <button className="menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>

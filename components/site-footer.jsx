@@ -17,7 +17,7 @@ export default function SiteFooter() {
     <nav className="footer-columns" aria-label="Footer">
       <div><p className="footer-heading">Court Marriage</p><Link href="/court-marriage">Court Marriage in Pakistan</Link>{courtCities.map((city) => <Link key={city} href={`/court-marriage/${city.toLowerCase()}`}>Court Marriage in {city}</Link>)}</div>
       <div><p className="footer-heading">Online Nikah</p><Link href="/online-nikah">Online Nikah</Link>{Object.entries(onlineNikahCountries).map(([slug, item]) => <Link key={slug} href={`/online-nikah/${slug}`}>Online Nikah from {item.name}</Link>)}</div>
-      <div><p className="footer-heading">Company</p><Link href="/marriage-certificate">Marriage Certificate</Link><Link href="/blog">Blog &amp; Guides</Link><Link href="/about-us">About Us</Link><Link href="/#contact">Contact</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-and-conditions">Terms &amp; Conditions</Link></div>
+      <div><p className="footer-heading">Company</p><Link href="/marriage-certificate">Marriage Certificate</Link><Link href="/blog">Blog &amp; Guides</Link><Link href="/about-us">About Us</Link><Link href="/contact-us">Contact</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-and-conditions">Terms &amp; Conditions</Link></div>
     </nav>
     <div className="footer-bottom"><p>© {new Date().getFullYear()} GenZ Marriages. All rights reserved. Information on this website is general guidance, not legal advice for your specific case.</p><p className="footer-credit">Developed by <a href="https://www.matechhub.com" target="_blank" rel="noopener">MA Tech Hub</a></p></div>
   </footer>

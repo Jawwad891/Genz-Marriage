@@ -23,6 +23,7 @@ export default function sitemap() {
     url('/blog', 0.7, 'weekly'),
     ...blogPosts.map((post) => ({ url: `${SITE_URL}/blog/${post.slug}`, lastModified: new Date(post.updated || post.date), changeFrequency: 'monthly', priority: 0.6 })),
     url('/about-us', 0.5),
+    url('/contact-us', 0.6),
     url('/privacy-policy', 0.2, 'yearly'),
     url('/terms-and-conditions', 0.2, 'yearly'),
   ]
