@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { courtMarriageDocuments } from '../lib/court-documents'
 
 const preparation = [
   ['Identity details', 'For court marriage in Karachi, start by reviewing the current identity documents each partner holds. Check that names and other personal details are consistent before paperwork is prepared, and ask which originals and copies to bring.'],
@@ -8,11 +9,8 @@ const preparation = [
 
 const requirements = [
   ['Age & voluntary consent', 'Both partners must be at least 18 for marriage in Sindh. Each person must freely agree to the marriage. Identity and age evidence should be reviewed before an appointment is confirmed.'],
-  ['Identity documents', 'Prepare current CNICs, NICOPs or passports, as applicable, for review. Confirm which originals, copies and additional age or nationality records are needed for your circumstances.'],
-  ['Witness information', 'Confirm the applicable nikah witness requirements with the person conducting the ceremony. Prepare the witnesses’ identity details and confirm their attendance before the appointment.'],
+  ...courtMarriageDocuments,
   ['Haq Mehr & marriage terms', 'Agree the Haq Mehr and how it will be recorded, including payment arrangements. Both partners should understand the Nikah Nama entries and any agreed conditions before signing.'],
-  ['Previous marriage records', 'If previously married, provide the relevant divorce or deceased spouse’s death records for review. An existing marriage or uncertainty about marital status needs individual legal review before proceeding.'],
-  ['Case-specific paperwork', 'Confirm whether photographs, an affidavit of free will, translations or other supporting documents are needed. Overseas participation or representation requires a separate review of the proposed arrangements.'],
 ]
 
 const procedure = [

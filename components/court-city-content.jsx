@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import LahoreCourtGuide from './lahore-court-guide'
+import { courtMarriageDocuments, courtMarriageDocumentsSummary } from '../lib/court-documents'
 
 const cityCopy = {
   Lahore: {
@@ -27,7 +28,7 @@ const cityCopy = {
 
 export function getCourtCityFaqs(city) {
   return [
-    [`What documents should we prepare for court marriage in ${city}?`, 'Begin with current identity documents and any relevant previous marriage records. Confirm the original documents, copies, witness identification, photographs and case-specific supporting paperwork needed before booking.'],
+    [`What documents should we prepare for court marriage in ${city}?`, courtMarriageDocumentsSummary],
     [`How much does court marriage in ${city} cost?`, 'Request a quote for your circumstances. Confirm the service scope, separate official charges and whether certificate assistance, translation or delivery is included before payment.'],
     ['Can everything be completed on the appointment day?', 'The nikah appointment and completion of registration or certificate work can have different timelines. Ask for a stage-by-stage schedule based on document readiness and the relevant office’s process.'],
     ['What if one partner is overseas?', 'Explain where each partner is located before choosing an arrangement. Remote participation, representation and acceptance of documents abroad need individual review. Explore our online nikah service for a focused enquiry.'],
@@ -45,11 +46,8 @@ export function CourtCityDetails({ city }) {
   const copy = cityCopy[city]
   const requirements = [
     ['Age, eligibility & consent', city === 'Islamabad' ? copy.jurisdiction + ' Both partners must freely agree to marry.' : 'Have the current Punjab age and eligibility requirements checked against the identity and age evidence of both partners. Each partner must freely agree to marry; disclose any legal issue affecting eligibility before booking.'],
-    ['Identity documentation', 'Prepare current CNICs, NICOPs or passports, as applicable. Confirm which originals and copies are required and resolve inconsistencies in names or other personal details before paperwork is finalised.'],
-    ['Witness arrangements', 'Confirm the applicable nikah witness requirements with the person conducting the ceremony. Prepare witness identity details and establish attendance arrangements before the appointment.'],
+    ...courtMarriageDocuments,
     ['Haq Mehr & Nikah Nama terms', 'Agree the Haq Mehr and payment arrangements, and discuss any other marriage terms to be recorded. Both partners should understand the entries before signing the Nikah Nama.'],
-    ['Previous marital status', 'Provide relevant divorce or deceased spouse’s death records for review if previously married. An existing marriage, incomplete records or uncertainty about marital status requires individual legal review.'],
-    ['Additional supporting paperwork', 'Ask whether photographs, a free-will affidavit, translations or other records are required in your case. Foreign nationality and overseas participation need a tailored checklist.'],
   ]
   const steps = [
     ['Initial consultation', `Explain your plans for ${city}, the location of both partners and your preferred timing. Raise questions about eligibility, previous marriage or overseas documentation before arranging attendance.`],
