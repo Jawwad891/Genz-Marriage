@@ -16,6 +16,11 @@ const nextConfig = {
     unoptimized: true,
   },
   poweredByHeader: false,
+  // Put the CSS inside the HTML instead of a separate file, so the first paint
+  // does not wait for a stylesheet download (PageSpeed: render-blocking requests).
+  experimental: {
+    inlineCss: true,
+  },
   async redirects() {
     return [
       // One host only: send the bare domain to www so Google sees a single site.
