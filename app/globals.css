@@ -215,3 +215,18 @@ a.location-card:hover { background: rgba(255,255,255,.06); }
 .logo-text { line-height: 1; }
 @media (max-width: 850px) { .logo-svg { width: 32px; height: 32px; } }
 @media (max-width: 700px) { .lawyer-experience { grid-template-columns: 1fr; gap: 25px; padding: 30px 22px; }.lawyer-years { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 0 22px; }.tips-list { grid-template-columns: 1fr; } }
+
+/* Accessibility: text contrast (WCAG AA). The decorative --gold stays for borders,
+   lines and icons; text that uses gold gets a darker shade on light backgrounds and a
+   lighter shade on the dark forest sections so it passes 4.5:1. */
+:root { --muted: #5f6762; --gold-text: #7d6835; --gold-on-dark: #c8b07a; }
+.eyebrow, .hero h1 em, h2 em, .contact-page h1 em, .logo i, .text-link span, .trust-line i,
+.card-top, .step-number, .about-notes span, .lawyer-years strong, .lawyer-name span,
+.tips-list li:before, .procedure-list li::before, .guide-toc nav span, .guide-links span,
+.blog-article .eyebrow, .breadcrumbs li + li:before { color: var(--gold-text); }
+.blog-meta { color: var(--gold-text) !important; }
+.trust-line { color: var(--muted); }
+.locations-section .eyebrow, .locations-section h2 em, .location-card span,
+.site-footer .logo i, .site-footer h2 em { color: var(--gold-on-dark); }
+.service-current { color: var(--muted); font-size: 11px; letter-spacing: .04em; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

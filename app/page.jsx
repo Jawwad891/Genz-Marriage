@@ -13,6 +13,7 @@ import { JsonLd, faqSchema, breadcrumbSchema, serviceSchema } from '../component
 import { onlineNikahCountries } from '../lib/online-nikah-countries'
 import { whatsappLink } from '../lib/site'
 import { blogPosts } from '../lib/blog-posts'
+import { srcSetFor, imageSizes } from '../lib/responsive-image'
 import { ArrowUpRight, ChevronDown, Check, MessageCircle, Scale, ClipboardCheck, Sparkles } from 'lucide-react'
 
 const services = [
@@ -36,8 +37,9 @@ function Reveal({ children, className = '' }) { return <div className={`reveal $
 
 function SectionIntro({ eyebrow, title, text, centered = false }) { return <div className={`section-intro ${centered ? 'centered' : ''}`}><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{text && <p className="intro-text">{text}</p>}</div> }
 
-function Img({ src, alt, width, height, priority = false }) {
-  return <img src={src} alt={alt} width={width} height={height} loading={priority ? 'eager' : 'lazy'} decoding={priority ? 'sync' : 'async'} fetchPriority={priority ? 'high' : 'auto'} />
+function Img({ src, alt, width, height, priority = false, sizes = imageSizes.half }) {
+  const srcSet = srcSetFor(src)
+  return <img src={src} srcSet={srcSet} sizes={srcSet ? sizes : undefined} alt={alt} width={width} height={height} loading={priority ? 'eager' : 'lazy'} decoding={priority ? 'sync' : 'async'} fetchPriority={priority ? 'high' : 'auto'} />
 }
 
 function pageContext({ serviceTitle, city, country }) {
@@ -86,9 +88,9 @@ export default function Page({ serviceTitle, city, country }) {
     <main>
       {crumbs.length > 1 && <nav className="breadcrumbs" aria-label="Breadcrumb"><ol>{crumbs.map(([name, href], i) => <li key={href}>{i === crumbs.length - 1 ? <span aria-current="page">{name}</span> : <Link href={href}>{name}</Link>}</li>)}</ol></nav>}
       <section id="home" className={`hero section-pad ${kind !== 'home' ? 'karachi-hero' : ''}`}><div className="hero-grid"><div className="hero-copy"><p className="eyebrow">{eyebrow}</p>{h1}
-        {hero}<div className="hero-actions"><a className="button button-primary" href="#contact">{cta} <ArrowUpRight size={17} /></a><a className="text-link" href="#services">Explore Services <span>↗</span></a></div><div className="trust-line"><Check size={14} /> 30 Years&apos; Legal Experience <i>•</i> Private <i>•</i> Pakistan-focused</div></div><div className="hero-visual"><div className="hero-main-image"><Img {...heroImage} priority /><span className="floating-label"><Sparkles size={14} /> Modern Marriage Services</span></div><div className="hero-thumbs"><Img src="/images/nikah-signing-ivory-thumb.webp" width={320} height={320} alt="Nikah Nama being signed with ivory wedding details" /><Img src="/images/wedding-details-ivory-thumb.webp" width={320} height={320} alt="Ivory nikah ceremony details" /></div></div></div></section>
+        {hero}<div className="hero-actions"><a className="button button-primary" href="#contact">{cta} <ArrowUpRight size={17} /></a><a className="text-link" href="#services">Explore Services <span>↗</span></a></div><div className="trust-line"><Check size={14} /> 30 Years&apos; Legal Experience <i>•</i> Private <i>•</i> Pakistan-focused</div></div><div className="hero-visual"><div className="hero-main-image"><Img {...heroImage} sizes={imageSizes.hero} priority /><span className="floating-label"><Sparkles size={14} /> Modern Marriage Services</span></div><div className="hero-thumbs"><Img sizes={imageSizes.thumb} src="/images/nikah-signing-ivory-thumb.webp" width={320} height={320} alt="Nikah Nama being signed with ivory wedding details" /><Img sizes={imageSizes.thumb} src="/images/wedding-details-ivory-thumb.webp" width={320} height={320} alt="Ivory nikah ceremony details" /></div></div></div></section>
 
-      <section id="services" className="section-pad services-section"><Reveal><SectionIntro eyebrow="What we do" title="Marriage Services, Without the Confusion" text="Court marriage, online nikah and marriage certificates — handled clearly, from documents to registration." /></Reveal><div className="service-grid">{services.map(({ number, title, text, href, icon: Icon }) => <Reveal key={title}><article className="service-card"><div className="card-top"><span>{number}</span><Icon size={21} strokeWidth={1.4} /></div><h3>{title}</h3><p>{text}</p><Link href={href} aria-label={`Learn more about ${title}`}>Learn more <ArrowUpRight size={16} /></Link></article></Reveal>)}</div></section>
+      <section id="services" className="section-pad services-section"><Reveal><SectionIntro eyebrow="What we do" title="Marriage Services, Without the Confusion" text="Court marriage, online nikah and marriage certificates — handled clearly, from documents to registration." /></Reveal><div className="service-grid">{services.map(({ number, title, text, href, icon: Icon }) => <Reveal key={title}><article className="service-card"><div className="card-top"><span>{number}</span><Icon size={21} strokeWidth={1.4} /></div><h3>{title}</h3><p>{text}</p>{href === path ? <span className="service-current">You are here</span> : <Link href={href}>Learn more<span className="sr-only"> about {title}</span> <ArrowUpRight size={16} aria-hidden="true" /></Link>}</article></Reveal>)}</div></section>
 
       {kind === 'court' && <CourtMarriagePillar />}
       {kind === 'court-karachi' && <KarachiCourtDetails />}
@@ -103,7 +105,7 @@ export default function Page({ serviceTitle, city, country }) {
 
       <section className="locations-section"><div className="location-inner"><Reveal><SectionIntro eyebrow="Where we work" title="Court Marriage Across Pakistan" text="Local guidance for each city where we arrange court marriage." /></Reveal><div className="locations-grid">{courtCities.map((name, i) => <Link className="location-card" key={name} href={`/court-marriage/${name.toLowerCase()}`}><span>0{i + 1}</span>{name}<ArrowUpRight size={15} /></Link>)}</div><p className="location-note">Enquiries from other cities are welcome — message us to check availability.</p></div></section>
 
-      <section className="chapter-section section-pad"><div className="chapter-image"><Img src="/images/couple-portrait.webp" width={1200} height={655} alt="Pakistani couple beginning married life" /><div className="chapter-card"><p className="eyebrow">A thoughtful beginning</p><h2>Beginning a<br /><em>New Chapter</em></h2><p>Clear guidance. Respectful service. Modern experience.</p></div></div></section>
+      <section className="chapter-section section-pad"><div className="chapter-image"><Img sizes={imageSizes.wide} src="/images/couple-portrait.webp" width={1200} height={655} alt="Pakistani couple beginning married life" /><div className="chapter-card"><p className="eyebrow">A thoughtful beginning</p><h2>Beginning a<br /><em>New Chapter</em></h2><p>Clear guidance. Respectful service. Modern experience.</p></div></div></section>
 
       {kind === 'home' && <section className="section-pad blog-more" ><SectionIntro eyebrow="Guides" title="Marriage Guides & Resources" text="Practical answers about the Nikah Nama, registration and nikah from abroad." /><div className="blog-grid">{blogPosts.slice(0, 3).map((post) => <article className="blog-card" key={post.slug}><h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3><p>{post.excerpt}</p></article>)}</div><p><Link className="text-link" href="/blog">All guides <span>↗</span></Link></p></section>}
 
