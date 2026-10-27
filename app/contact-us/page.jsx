@@ -9,7 +9,7 @@ import { ArrowUpRight, MapPin, MessageCircle, Phone, Mail } from 'lucide-react'
 
 export const metadata = pageMetadata({
   title: 'Contact Us – Court Marriage & Nikah Office in Karachi',
-  description: 'Contact GenZ Marriages for court marriage, online nikah and NADRA marriage certificate (MRC) support. Visit our office in Landhi Town, Karachi or message us on WhatsApp.',
+  description: 'Contact GenZ Marriages for court marriage, online nikah and NADRA marriage certificate support. Visit our Landhi, Karachi office or WhatsApp us.',
   path: '/contact-us',
 })
 

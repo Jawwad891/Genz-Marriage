@@ -27,10 +27,10 @@ export function generateStaticParams() {
 }
 
 const cityMeta = {
-  Karachi: 'Court marriage in Karachi for Rs. 22,000 to 35,000: free-will affidavits, nikah, Union Council registration & NADRA certificate. Documents & procedure explained.',
-  Lahore: 'Court marriage in Lahore: documents, nikah with witnesses, Nikah Nama, Union Council registration and NADRA certificate. Get a clear fee quote.',
-  Islamabad: 'Court marriage in Islamabad: age rules under the ICT Act 2025, documents, nikah, registration and NADRA marriage certificate. Get a quote.',
-  Rawalpindi: 'Court marriage in Rawalpindi: documents, nikah with witnesses, Union Council registration and NADRA certificate. Procedure and fees explained.',
+  Karachi: 'Court marriage in Karachi for Rs. 22,000–35,000: affidavits, nikah, Union Council registration & NADRA certificate. Same-day nikah.',
+  Lahore: 'Court marriage in Lahore for Rs. 15,000–27,000: documents, nikah with witnesses, Union Council registration & NADRA certificate.',
+  Islamabad: 'Court marriage in Islamabad for Rs. 25,000–29,000: ICT age rules, documents, nikah, registration & NADRA marriage certificate.',
+  Rawalpindi: 'Court marriage in Rawalpindi: documents, nikah with witnesses, Union Council registration and NADRA certificate. Get a clear quote.',
 }
 
 export async function generateMetadata({ params }) {
@@ -41,10 +41,10 @@ export async function generateMetadata({ params }) {
     const info = onlineNikahCountries[country]
     return pageMetadata({ title: info.metaTitle, description: info.metaDescription, path, image: '/images/nikah-signing-emerald.webp' })
   }
-  if (city) return pageMetadata({ title: `Court Marriage in ${city} – Procedure, Documents & Fees`, description: cityMeta[city], path })
-  if (serviceTitle === 'Court Marriage') return pageMetadata({ title: 'Court Marriage in Pakistan – Procedure, Documents & Fees', description: 'Court marriage in Pakistan explained: requirements, documents, step-by-step procedure, fees and NADRA marriage certificate. Karachi, Lahore, Islamabad & Rawalpindi.', path })
-  if (serviceTitle === 'Online Nikah') return pageMetadata({ title: 'Online Nikah in Pakistan for Overseas Pakistanis – Wakeel Nikah', description: 'Online nikah in Pakistan for Pakistanis in the UAE, Saudi Arabia, UK, USA, Canada and more. Wakeel nikah, Union Council registration and NADRA certificate.', path, image: '/images/nikah-signing-emerald.webp' })
-  return pageMetadata({ title: 'NADRA Marriage Certificate & Nikah Registration in Pakistan', description: 'Get your NADRA marriage certificate: Nikah Nama registration with the Union Council, corrections, MOFA attestation and English translation for use abroad.', path })
+  if (city) return pageMetadata({ title: `Court Marriage in ${city} – Fees & Documents`, description: cityMeta[city], path })
+  if (serviceTitle === 'Court Marriage') return pageMetadata({ title: 'Court Marriage Procedure in Pakistan & Fees', description: 'Court marriage procedure in Pakistan: requirements, documents, steps, fees and NADRA certificate for Karachi, Lahore, Islamabad & Rawalpindi.', path })
+  if (serviceTitle === 'Online Nikah') return pageMetadata({ title: 'Online Nikah in Pakistan for Overseas Pakistanis', description: 'Online nikah in Pakistan for Pakistanis in the UAE, Saudi Arabia, UK, USA & Canada. Wakeel nikah, Union Council registration & NADRA certificate.', path, image: '/images/nikah-signing-emerald.webp' })
+  return pageMetadata({ title: 'NADRA Marriage Certificate & Nikah Registration', description: 'Get your NADRA marriage certificate: Nikah Nama registration with the Union Council, corrections, MOFA attestation and translation for abroad.', path })
 }
 
 export default async function ServicePage({ params }) {

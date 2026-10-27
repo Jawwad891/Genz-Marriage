@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import LahoreCourtGuide from './lahore-court-guide'
 import { courtMarriageDocuments, courtMarriageDocumentsSummary } from '../lib/court-documents'
+import { CITY_FEES } from '../lib/site'
 
 const cityCopy = {
   Lahore: {
@@ -29,7 +30,7 @@ const cityCopy = {
 export function getCourtCityFaqs(city) {
   return [
     [`What documents should we prepare for court marriage in ${city}?`, courtMarriageDocumentsSummary],
-    [`How much does court marriage in ${city} cost?`, city === 'Karachi' ? 'Our court marriage fee in Karachi is Rs. 22,000 to Rs. 35,000, depending on your documents and the services you need. We confirm the exact amount in an itemised quote before you book.' : 'Request a quote for your circumstances. Confirm the service scope, separate official charges and whether certificate assistance, translation or delivery is included before payment.'],
+    [`How much does court marriage in ${city} cost?`, CITY_FEES[city] ? `Our court marriage fee in ${city} is ${CITY_FEES[city]}, depending on your documents and the services you need. We confirm the exact amount in an itemised quote before you book.` : 'Request a quote for your circumstances. Confirm the service scope, separate official charges and whether certificate assistance, translation or delivery is included before payment.'],
     [`How long does court marriage take in ${city}?`, 'With complete documents, the affidavits and nikah are usually completed on the same day. Union Council registration and the NADRA marriage certificate follow afterwards.'],
     [`Are witnesses required for court marriage in ${city}?`, 'Yes. Two adult male witnesses are needed for the nikah, with their CNICs. If you do not have witnesses, we can help arrange them for you.'],
     [`Is a court marriage done in ${city} valid all over Pakistan?`, 'Yes. A nikah performed with free consent and witnesses and registered with the Union Council is valid throughout Pakistan, and the NADRA marriage certificate can be used for passports, visas and other official records.'],
@@ -41,7 +42,7 @@ export function getCourtCityFaqs(city) {
 
 export function CourtCityHero({ city }) {
   const copy = cityCopy[city]
-  return <div className="karachi-hero-description"><h2>{copy.heading}</h2><p className="hero-text">{copy.intro}</p><h3>Nikah Arrangements, Marriage Registration &amp; Fees</h3><p className="hero-text">Discuss preparation of your Nikah Nama, the registration steps to coordinate with the relevant Nikah Registrar and Union Council, and any <Link href="/marriage-certificate">marriage certificate assistance</Link> you need afterwards. Request a quote explaining the included services, separate charges and expected timeline for each stage. Review personal details and agreed terms before signing, and clarify how your completed marriage records will be provided.</p></div>
+  return <div className="karachi-hero-description"><h2>{copy.heading}</h2><p className="hero-text">{copy.intro}</p><h3>Nikah Arrangements, Marriage Registration &amp; Fees</h3>{CITY_FEES[city] && <p className="hero-text"><strong>Court marriage fee in {city}: {CITY_FEES[city]}</strong>, depending on your documents and the services you need.</p>}<p className="hero-text">Discuss preparation of your Nikah Nama, the registration steps to coordinate with the relevant Nikah Registrar and Union Council, and any <Link href="/marriage-certificate">marriage certificate assistance</Link> you need afterwards. Request a quote explaining the included services, separate charges and expected timeline for each stage. Review personal details and agreed terms before signing, and clarify how your completed marriage records will be provided.</p></div>
 }
 
 export function CourtCityDetails({ city }) {
