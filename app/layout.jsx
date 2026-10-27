@@ -2,9 +2,10 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { SITE_URL, SITE_NAME } from '../lib/site'
 import { JsonLd, organizationSchema, websiteSchema } from '../components/json-ld'
+import LegalAssistantWidget from '../components/legal-assistant-widget'
 
-const title = 'Court Marriage in Pakistan & Online Nikah | GenZ Marriages'
-const description = 'Court marriage in Karachi, Lahore, Islamabad and Rawalpindi, online nikah for overseas Pakistanis and NADRA marriage certificate support. Clear procedure, documents and fees.'
+const title = 'Court Marriage & Online Nikah in Pakistan | GenZ Marriages'
+const description = "Court marriage in Karachi, Lahore, Islamabad & Rawalpindi, online nikah for overseas Pakistanis and NADRA marriage certificates. 30 years' experience."
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
     <JsonLd data={organizationSchema()} />
     <JsonLd data={websiteSchema()} />
     {children}
+    <LegalAssistantWidget />
     {process.env.NODE_ENV === 'production' && <Analytics />}
   </body></html>
 }

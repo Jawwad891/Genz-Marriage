@@ -31,6 +31,7 @@ export default function SiteNav() {
           <Link className="certificate-link" href="/marriage-certificate" onClick={close}>Marriage Certificate</Link>
         </div>
       </div>
+      <Link href="/legal-assistant" onClick={close}>Legal Assistant</Link>
       <Link href="/blog" onClick={close}>Blog</Link>
       <Link href="/about-us" onClick={close}>About Us</Link>
       <Link href="/contact-us" onClick={close}>Contact Us</Link>

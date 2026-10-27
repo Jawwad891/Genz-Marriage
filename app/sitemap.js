@@ -8,7 +8,7 @@ const courtCities = ['karachi', 'lahore', 'islamabad', 'rawalpindi']
 export const dynamic = 'force-dynamic'
 
 // Date the service pages last changed meaningfully. Update when you edit page content.
-const PAGES_UPDATED = '2026-10-04'
+const PAGES_UPDATED = '2026-10-27'
 
 export default function sitemap() {
   const lastModified = new Date(PAGES_UPDATED)
@@ -20,6 +20,7 @@ export default function sitemap() {
     url('/online-nikah', 0.9, 'weekly'),
     ...Object.keys(onlineNikahCountries).map((country) => url(`/online-nikah/${country}`, 0.8)),
     url('/marriage-certificate', 0.8),
+    url('/legal-assistant', 0.7),
     url('/blog', 0.7, 'weekly'),
     ...blogPosts.map((post) => ({ url: `${SITE_URL}/blog/${post.slug}`, lastModified: new Date(post.updated || post.date), changeFrequency: 'monthly', priority: 0.6 })),
     url('/about-us', 0.5),
